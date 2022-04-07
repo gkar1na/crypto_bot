@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  telegram_bot:
+    container_name: crypto_telegram_bot
+    image: aiogram/telegram-bot-api:latest
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - telegram-bot-api-data:/var/lib/telegram-bot-api
+    ports:
+      - 8081:8081
+    restart: unless-stopped
+
+
+volumes:
+  telegram-bot-api-data:
