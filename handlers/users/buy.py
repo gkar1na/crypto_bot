@@ -1,11 +1,15 @@
 import logging
 from aiogram import types
 
-from config import settings, dp
+from config import dp
 from keyboards.crypto import get_markup
 
 
 logger = logging.getLogger(__name__)
+
+buy_text = '''
+Выберите криптовалюту, которую хотите купить.
+'''
 
 
 @dp.callback_query_handler(regexp='buy$')
@@ -17,6 +21,6 @@ async def send_welcome_callback(callback: types.CallbackQuery):
 
     await dp.bot.send_message(
         chat_id=callback.from_user.id,
-        text=settings.buy_text,
+        text=buy_text,
         reply_markup=await get_markup(callback)
     )
