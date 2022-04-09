@@ -7,24 +7,20 @@ logger = logging.getLogger(__name__)
 
 
 async def get_markup(callback: types.CallbackQuery) -> InlineKeyboardMarkup:
-    banks = [
-        ['Тинькофф'],
-        ['СберБанк'],
-        ['Альфабанк'],
-        ['ВТБ'],
-        ['СБП'],
-        ['ЮMoney'],
-        ['Payeer']
+    crypto = [
+        ['Bitcoin (BTC)'],
+        ['Toncoin (TON)'],
+        ['Binance Coin (BNB)'],
+        ['Tether (USDT)']
     ]
 
     buttons = []
-    for row in banks:
+    for row in crypto:
         buttons.append([])
         for text in row:
-            print(f'{callback.data}/{text}_bank')
             buttons[-1].append(InlineKeyboardButton(
                 text=text,
-                callback_data=f'{callback.data}/{text}_bank'
+                callback_data=f'{callback.data}/{(text.split()[-1])}_crpt'
             ))
     buttons.append([InlineKeyboardButton(
         text='< Назад',

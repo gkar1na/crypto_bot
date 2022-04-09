@@ -3,3 +3,4 @@ from . import buy
 from . import sell
 from . import bank
 from . import request
+from . import crypto

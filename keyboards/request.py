@@ -26,7 +26,7 @@ async def get_markup(callback: types.CallbackQuery) -> InlineKeyboardMarkup:
 
     buttons = [
         InlineKeyboardButton(
-            text='Начнём >',
+            text='Сотрудник >',
             callback_data=f'{callback.data}/{admin_id}_final',
             url=f'{url}/{admin_username}'
         )

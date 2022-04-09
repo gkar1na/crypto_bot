@@ -18,11 +18,11 @@ async def get_markup(callback: types.CallbackQuery) -> InlineKeyboardMarkup:
         for text in row:
             buttons[-1].append(InlineKeyboardButton(
                 text=text,
-                callback_data=f'{callback.data}/{text}_currency'
+                callback_data=f'{callback.data}/{text}_crnc'
             ))
     buttons.append([InlineKeyboardButton(
-        text='< Назад в Маркет',
-        callback_data='welcome'
+        text='< Назад',
+        callback_data=callback.data[:callback.data.rfind('/')]
     )])
 
     markup = InlineKeyboardMarkup()

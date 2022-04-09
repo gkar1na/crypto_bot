@@ -9,11 +9,11 @@ async def get_markup() -> InlineKeyboardMarkup:
     buttons = [
         InlineKeyboardButton(
             text='Купить',
-            callback_data=f'welcome/action_buy'
+            callback_data=f's/buy'
         ),
         InlineKeyboardButton(
             text='Продать',
-            callback_data=f'welcome/action_sell'
+            callback_data=f's/sell'
         )
     ]
 
