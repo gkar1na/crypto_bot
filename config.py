@@ -12,12 +12,12 @@ class Settings(BaseSettings):
     TG_TOKEN: Optional[str]
     ADMINS_ID: list = []
     ADMINS_USERNAME: list = []
-    welcome_text: str
-    buy_text: str
-    sell_text: str
-    currency_text: str
-    bank_text: str
-    final_text: str
+    # welcome_text: str
+    # buy_text: str
+    # sell_text: str
+    # currency_text: str
+    # bank_text: str
+    # final_text: str
 
     class Config:
         env_prefix = ''
